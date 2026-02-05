@@ -1,37 +1,41 @@
-# Autonomous-Driving-Tutorial
-ROS 설치 및 공부 & 자율주행 튜토리얼
+# 📘 신입생 온보딩 매뉴얼: 자율주행 기초 (Draft)
 
- ## ROS에 관해
- ROS 2는 다양한 버전이 있지만, Humble은 LTS(Long Term Support) 버전으로 안정성이 높고, 많은 실무와 연구 환경에서 사용 됨.
- Ubuntu 22.04 (Jammy Jellyfish) 환경에서 설치 해야 함.
- 
- ## Requirements
- 기본 패키지 설치
+본 매뉴얼은 자율주행 연구를 위한 기초적인 개발 환경 구축부터 ROS 2 핵심 개념(통신, 빌드, 좌표계) 및 기초 논문 학습을 위해 작성되었습니다.
 
-### 1. ROS2 apt repository
-```
-sudo apt install software-properties-common
-sudo add-apt-repository universe
-sudo apt update && sudo apt install curl
+---
 
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+## 📚 목차 (Table of Contents)
 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-```
+1. [Part 1. 개발 환경 구축 (Environment Setup)](#part-1-개발-환경-구축-environment-setup)
+2. [Part 2. ROS 2 핵심 개념 및 실습](#part-2-ros-2-핵심-개념)
+3. [Part 2.3. 좌표계 변환 (TF2)](#part-23-좌표계-변환-tf2)
+4. [Part 2.5. 자율주행 관련 논문 리뷰](#part-25-자율-주행-관련-논문-리뷰)
 
-### 2. Install ROS 2
-```
+---
+
+## Part 1. 개발 환경 구축 (Environment Setup)
+
+자율주행 연구를 위한 가장 기초적인 OS 및 미들웨어 설치 과정입니다.
+
+### 1-1. Ubuntu 설치 및 세팅
+
+* **목표:** Ubuntu 22.04 LTS 설치 (ROS 2 Humble 호환성 고려)
+* **권장 사양:** 멀티 부팅 시 최소 **200GB ~ 300GB** (500GB 권장) 확보
+* **설치 방법:**
+    1.  [Ubuntu 22.04 LTS 다운로드](https://releases.ubuntu.com/jammy/)
+    2.  **Rufus** 등을 이용하여 부팅 디스크 제작
+    3.  BIOS 설정 후 설치 진행 (Dual Boot 또는 단독 설치)
+* **필수 확인:**
+    * 기본 터미널 명령어 숙지 (`ls`, `cd`, `mkdir`, `sudo`, `chmod`)
+    * NVIDIA 그래픽 드라이버 설치 확인 (`nvidia-smi`)
+
+### 1-2. Python3 & ROS 2 (Humble) 설치
+
+Python 3.10 환경과 ROS 2 Humble 미들웨어를 설치합니다.
+
+**Python 3.10 설치**
+```bash
 sudo apt update
-sudo apt install ros-humble-desktop
-sudo apt install ros-dev-tools
-```
-
-### 3. 패키지 설치
-```
-sudo apt update && sudo apt install -y build-essential cmake git libbullet-dev python3-colcon-common-extensions python3-flake8 python3-pip python3-pytest-cov python3-rosdep python3-setuptools python3-vcstool wget python3-argcomplete
-
-python3 -m pip install -U flake8-blind-except flake8-builtins flake8-class-newline flake8-comprehensions flake8-deprecated flake8-docstrings flake8-import-order flake8-quotes pytest-repeat pytest-rerunfailures pytest
-
-sudo apt install --no-install-recommends -y libasio-dev libtinyxml2-dev libcunit1-dev
-```
-
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt install python3.10
