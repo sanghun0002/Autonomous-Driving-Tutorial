@@ -28,12 +28,22 @@ sudo apt install ros-humble-turtlesim
 ros2 run turtlesim turtlesim_node
 ```
 
+<div align="center">
+  <img src="picture/2-1.png" width="600">
+  <p>▲ 노드 실행 화면</p>
+</div>
+
 **[터미널 2] 실행 중인 노드 목록 확인**
 현재 `turtlesim` 노드가 실행 중인지 리스트를 조회합니다.
 
 ```bash
 ros2 node list
 ```
+
+<div align="center">
+  <img src="picture/2-2.png" width="600">
+  <p>▲ 노드 list 명령어 실행 화면</p>
+</div>
 
 ### 2. Topic (비동기 단방향 통신)
 Publisher(송신)와 Subscriber(수신) 구조를 이해합니다.
@@ -44,6 +54,11 @@ Publisher(송신)와 Subscriber(수신) 구조를 이해합니다.
 ```bash
 ros2 run turtlesim turtle_teleop_key
 ```
+
+<div align="center">
+  <img src="picture/2-3.png" width="600">
+  <p>▲ 방향키로 움직이는 화면 예시</p>
+</div>
 
 **[터미널 3] 토픽 데이터 확인 (Subscriber)**
 실제로 어떤 데이터(`linear`, `angular` 속도)가 오가는지 눈으로 확인합니다.
@@ -56,6 +71,11 @@ ros2 topic list
 ros2 topic echo /turtle1/cmd_vel
 ```
 
+<div align="center">
+  <img src="picture/2-4.png" width="600">
+  <p>▲ 특정 토픽 확인 명령어 화면</p>
+</div>
+
 ### 3. Service (동기 양방향 통신)
 요청(Request)과 응답(Response) 구조를 이해합니다. 거북이를 새로 소환하는 서비스(`spawn`)를 호출해 봅니다.
 
@@ -67,6 +87,11 @@ ros2 topic echo /turtle1/cmd_vel
 ```bash
 ros2 service call /spawn turtlesim/srv/Spawn "{x: 5.0, y: 5.0, theta: 0.0, name: 'my_turtle'}"
 ```
+
+<div align="center">
+  <img src="picture/2-5.png" width="600">
+  <p>▲ 서비스 요청 화면</p>
+</div>
 
 > **Tip:** `x`나 `y` 좌표를 다른 값으로 변경해서 테스트해 보세요.
 
@@ -82,4 +107,10 @@ ros2 service call /spawn turtlesim/srv/Spawn "{x: 5.0, y: 5.0, theta: 0.0, name:
 ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 1.57}" --feedback
 ```
 
+<div align="center">
+  <img src="picture/2-6.png" width="600">
+  <p>▲ 액션 요청 명령어 화면</p>
+</div>
+
 > **Tip:** `--feedback` 옵션을 빼면 중간 과정 없이 결과만 출력됩니다. 차이를 비교해 보세요.
+
