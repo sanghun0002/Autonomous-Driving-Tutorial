@@ -70,6 +70,11 @@ ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 1 --yaw 0 --pitch 0 
 ```
 > **Note:** 이 터미널은 끄지 말고 켜두어야 TF가 유지됩니다.
 
+<div align="center">
+  <img src="picture/4-1.png" width="600">
+  <p>▲ TF 요청 화면</p>
+</div>
+
 ### Step 4. TF 트리 확인 (View Frames)
 현재 연결된 좌표계들의 족보(Tree)를 PDF 파일로 그려서 확인합니다.
 
@@ -78,6 +83,11 @@ ros2 run tf2_ros static_transform_publisher --x 0 --y 0 --z 1 --yaw 0 --pitch 0 
 # 5초 동안 데이터를 수집해서 frames.pdf 파일을 생성함
 ros2 run tf2_tools view_frames
 ```
+<div align="center">
+  <img src="picture/4-3.png" width="600">
+  <p>▲ TF 트리 PDF 화면</p>
+</div>
+
 * 생성된 `frames.pdf` 파일을 열어보면 `world` -> `turtle1` -> `lidar_link` 구조를 볼 수 있습니다.
 
 ### Step 5. Rviz2에서 3D로 확인
@@ -87,8 +97,14 @@ ros2 run tf2_tools view_frames
 ros2 run rviz2 rviz2
 ```
 
+<div align="center">
+  <img src="picture/4-2.png" width="600">
+  <p>▲ RViz2 화면</p>
+</div>
+
 **Rviz 설정 방법:**
 1.  좌측 하단 **[Add]** 버튼 클릭
 2.  **[TF]** 선택 후 OK
 3.  좌측 상단 **Fixed Frame**을 `world`로 변경
 4.  키보드([터미널 2])로 거북이를 움직이면, `turtle1`과 `lidar_link` 축이 함께 움직이는 것을 볼 수 있습니다.
+
