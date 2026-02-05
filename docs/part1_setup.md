@@ -29,8 +29,8 @@
     ```bash
     nvidia-smi
     ```
-![nvidia-smi 실행화면](picture/1-1.png)
-<img src="picture/1-1.jpg" width="600">
+<img src="picture/1-1.png" width="600">
+
 ---
 
 ## 1-2. Python3 & ROS 2 (Humble) 설치
@@ -93,5 +93,6 @@ ros2 run demo_nodes_cpp talker
 ```bash
 ros2 run demo_nodes_py listener
 ```
+
 
 
