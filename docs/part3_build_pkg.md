@@ -39,6 +39,11 @@ cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python my_first_pkg --dependencies rclpy std_msgs
 ```
 
+<div align="center">
+  <img src="picture/3-1.png" width="600">
+  <p>▲ 패키지 생성된 화면</p>
+</div>
+
 ---
 
 ## 3-2. 노드(Node) 코드 작성
@@ -112,6 +117,12 @@ source install/local_setup.bash
 # 4. 실행
 ros2 run my_first_pkg my_node
 ```
+
+<div align="center">
+  <img src="picture/3-2.png" width="600">
+  <p>▲ 빌드 후 결과 출력 화면</p>
+</div>
+
 
 ---
 
@@ -215,3 +226,4 @@ ros2 launch my_first_pkg my_robot.launch.py
     ```bash
     rviz2
     ```
+
