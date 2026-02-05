@@ -24,7 +24,7 @@
 * TF Tree 이해 (Map, Odom, Base_link)
 * Static TF와 Dynamic TF 실습
 
-### [📂 Part 5. 자율주행 관련 논문 리뷰](./docs/part5_papers_reviews.md)
+### [📂 Part 5. 자율주행 관련 논문 리뷰](./docs/part5_papers_review.md)
 * 자율주행 시스템 및 최신 기술 동향 Survey 논문
 
 ---
