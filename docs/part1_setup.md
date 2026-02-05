@@ -29,7 +29,10 @@
     ```bash
     nvidia-smi
     ```
-<img src="picture/1-1.png" width="600">
+<div align="center">
+  <img src="picture/1-1.png" width="600">
+  <p>▲ nvidia-smi 실행 화면</p>
+</div>
 
 ---
 
@@ -93,6 +96,11 @@ ros2 run demo_nodes_cpp talker
 ```bash
 ros2 run demo_nodes_py listener
 ```
+
+<div align="center">
+  <img src="picture/1-2.png" width="600">
+  <p>▲ Talker/Listener 테스트 실행 화면</p>
+</div>
 
 
 
