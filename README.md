@@ -38,7 +38,7 @@
 ## [Phase 2. Autoware 아키텍처 심화 (Sensing ~ Control)]
 * 해당 파트 과정은 절대 모든 노드를 외우는 데 목적을 두는 것이 아님.
 * 자율주행이 어떻게 동작하는지에 대한 흐름을 이해하는 것으로 충분함.
-   
+*  https://autowarefoundation.github.io/autoware_universe/main/
 ### [📂 Part 6. Autoware: Sensing (전처리)](./docs/part6_sensing.md)
 * LiDAR/Camera 드라이버 구동 및 PointCloud 노이즈 제거/다운샘플링(Voxel Grid) 파이프라인.
 
