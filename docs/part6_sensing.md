@@ -54,7 +54,6 @@ ros2 topic bw /lidar/points_raw
 ros2 topic bw /lidar/concatenated/pointcloud
 ```
 
-**2. RViz2 시각화 실행 (터미널 4)**
 
 ### Step 3. RViz2 시각화
 **[터미널 4] Rviz2 실행**
@@ -62,9 +61,8 @@ ros2 topic bw /lidar/concatenated/pointcloud
 ros2 run rviz2 rviz2
 ```
 
-**3. RViz 설정 가이드**
-
 **Rviz 설정:**
 1. **Global Options** -> Fixed Frame을 `map` 또는 `base_link`로 설정.
 2. **Add** -> `PointCloud2` 추가 -> Topic을 `/lidar/concatenated/pointcloud`로 선택.
 3. 차량 주변의 점구름이 선명하게 보이는지 확인합니다.
+
