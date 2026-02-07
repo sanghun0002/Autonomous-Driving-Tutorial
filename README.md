@@ -8,6 +8,8 @@
 
 ## 📚 목차 (Table of Contents)
 
+## [Phase 1. 개발환경 & ROS2]
+
 ### [📂 Part 1. 개발 환경 구축 (Environment Setup)](./docs/part1_setup.md)
 * Ubuntu 22.04 LTS 설치 및 세팅
 * Python 3.10 & ROS 2 Humble 설치
@@ -37,7 +39,7 @@
 
 ---
 
-### [Phase 2. Autoware 아키텍처 심화 (Sensing ~ Control)]
+## [Phase 2. Autoware 아키텍처 심화 (Sensing ~ Control)]
 
 ### [📂 Part 6. Autoware: Sensing (전처리)](./docs/part6_sensing.md)
 * LiDAR/Camera 드라이버 구동 및 PointCloud 노이즈 제거/다운샘플링(Voxel Grid) 파이프라인.
