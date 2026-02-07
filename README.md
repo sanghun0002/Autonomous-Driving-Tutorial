@@ -39,20 +39,20 @@
 
 ### [Phase 2. Autoware 아키텍처 심화 (Sensing ~ Control)]
 
-#### [📂 Part 6. Autoware: Sensing (전처리)](./docs/part6_sensing.md)
+### [📂 Part 6. Autoware: Sensing (전처리)](./docs/part6_sensing.md)
 * LiDAR/Camera 드라이버 구동 및 PointCloud 노이즈 제거/다운샘플링(Voxel Grid) 파이프라인.
 
-#### [📂 Part 7. Autoware: Localization (위치 추정)](./docs/part7_localization.md)
+### [📂 Part 7. Autoware: Localization (위치 추정)](./docs/part7_localization.md)
 * NDT Matching(Lidar+Map)과 EKF를 융합하여 차량의 정밀 위치(Pose)를 실시간 추정.
 
-#### [📂 Part 8. Autoware: Perception (인지)](./docs/part8_perception.md)
+### [📂 Part 8. Autoware: Perception (인지)](./docs/part8_perception.md)
 * Lidar-CenterPoint 및 Multi-modal Sensor Fusion을 활용한 객체 인식(Detection)과 추적(Tracking).
 
-#### [📂 Part 9. Autoware: Planning (판단 및 경로 생성)](./docs/part9_planning.md)
+### [📂 Part 9. Autoware: Planning (판단 및 경로 생성)](./docs/part9_planning.md)
 * 전역 경로(Mission), 주행 행동 결정(Behavior), 장애물 회피 궤적(Motion)을 생성하는 계층적 계획 수립.
 
-#### [📂 Part 10. Autoware: Control (제어)](./docs/part10_control.md)
+### [📂 Part 10. Autoware: Control (제어)](./docs/part10_control.md)
 * 생성된 궤적을 오차 없이 추종하는 알고리즘(MPC) 및 ROS 명령을 CAN 신호로 변환하는 차량 인터페이스.
 
-#### [📂 Part 11. 시스템 통합 및 디버깅 (System Integration)](./docs/part11_integration.md)
+### [📂 Part 11. 시스템 통합 및 디버깅 (System Integration)](./docs/part11_integration.md)
 * RQT Graph를 통한 전체 노드 연결 상태 점검 및 CARLA 시뮬레이터 연동 루프 검증.
