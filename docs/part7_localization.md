@@ -9,7 +9,7 @@
 아래 핵심 노드 참조 
 
 <div align="center">
-  <img src="picture/1-1.png" width="600">
+  <img src="picture/localization.PNG" width="600">
   <p>▲ localization 정리 예시 </p>
 </div>
 
@@ -32,5 +32,6 @@
 - **Main Node:** `ekf_localizer`
 - **Process:** NDT(느림, 정확) + IMU/Odometry(빠름, 누적오차)를 융합하여 고주파수 Pose 출력.
 - **Output:** `/localization/kinematic_state` (최종적으로 Planning이 사용하는 차량 위치)
+
 
 
