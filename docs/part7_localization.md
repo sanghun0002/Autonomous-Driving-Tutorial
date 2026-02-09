@@ -2,6 +2,11 @@
 
 *센서 데이터가 지도(Map) 위에서 차량의 현재 위치(Pose)로 변환되는 과정입니다.*
 
+목표: 
+* 센서에서 어떤 형태로 데이터를 받아서 어떤 노드로 들어가서 처리되는가?
+* 최종 위치 추정되는 토픽은 어떤 형태로 나오는가? 
+
+아래 핵심 노드 참조 
 ### 4-1. NDT Matching (LiDAR 기반 측위)
 
 > 학습 포인트: 로컬 센서 데이터가 전역 지도(Global Map)와 어떻게 매칭되는가?
@@ -21,3 +26,4 @@
 - **Main Node:** `ekf_localizer`
 - **Process:** NDT(느림, 정확) + IMU/Odometry(빠름, 누적오차)를 융합하여 고주파수 Pose 출력.
 - **Output:** `/localization/kinematic_state` (최종적으로 Planning이 사용하는 차량 위치)
+
