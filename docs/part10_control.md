@@ -1,6 +1,7 @@
 ## Part 7. Autoware: Control (차량 제어)
 
 *Planning에서 만든 가상의 궤적(Trajectory)을 실제 차량이 따라가도록 악셀, 브레이크, 핸들을 조작하는 과정입니다.*
+
 목표:
 
 * 계획된 궤적과 현재 차량 위치 사이의 오차를 계산하고 보정하는 원리를 이해합니다.
@@ -39,3 +40,4 @@
 - **Output:**
     - **To Hardware:** CAN Bus Signal (Throttle, Brake, Steer motor)
     - **To ROS (Feedback):** `/vehicle/status/velocity`, `/vehicle/status/steering_status` (실제 차량의 현재 상태 피드백)
+
