@@ -60,3 +60,18 @@
 
 ### [📂 Part 11. 시스템 통합 및 디버깅 (System Integration)](./docs/part11_integration.md)
 * RQT Graph를 통한 전체 노드 연결 상태 점검 및 CARLA 시뮬레이터 연동 루프 검증.
+
+---
+
+## [Phase 3. Carla 시뮬레이터]
+* 시뮬레이터 내에서 차량의 자율주행 동작을 확인하고 이해하는것을 목표로 함.
+* 자율 주행중에 데이터가 수집되는 과정을 실시간으로 확인하고 phase 2에서 학습한 내용을 시뮬레이터 환경에서 복습하는 과정임.
+
+### [📂 Part 12. Carla simulator 설치](./docs/part12_install_carla.md)
+* Carla 시뮬레이터 설치 과정 익히기.
+
+### [📂 Part 13. Carla pythonAPI 사용](./docs/part13_carla_pythonAPI.md)
+* PythonAPI 설정 및 예제 코드 사용법 익히기.
+
+### [📂 Part 14. Carla_ros_bridge 연동 ](./docs/part14_carla_ros_bridge.md)
+* Carla와 carla_ros_bridge를 연동하여 시뮬레이터 내의 정보를 ros_topic으로 확인하기.
