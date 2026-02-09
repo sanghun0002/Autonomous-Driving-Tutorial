@@ -70,38 +70,30 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 특정 환경에서 빌드 에러가 발생하거나 의존성 충돌이 일어날 경우 자신의 세팅에 맞게 파일들을 수정하여 호환성을 확보해야함.
 
-* EX) A. Planning 모듈 설정 변경
+* EX1) A. Planning 모듈 설정 변경
 
     * node: Behavior Velocity Planner
 
     * 경로: src/universe/autoware.universe/planning/behavior_velocity_planner/autoware_behavior_velocity_planner/
 
     * 수정 파일: CMakeLists.txt, package.xml
+ 
+* EX2)
 
-Motion Velocity Planner Node
+    * node: Motion Velocity Planner Node
+      
+    * 경로: src/universe/autoware.universe/planning/motion_velocity_planner/autoware_motion_velocity_planner_node/
 
-경로: src/universe/autoware.universe/planning/motion_velocity_planner/autoware_motion_velocity_planner_node/
+    * 수정 파일: package.xml
+ 
+* EX3)
 
-수정 파일: package.xml
+    * node: Static Centerline Generator
 
-Static Centerline Generator
+    * 경로: src/universe/autoware.universe/planning/autoware_static_centerline_generator/
 
-경로: src/universe/autoware.universe/planning/autoware_static_centerline_generator/
+    * 수정 파일: package.xml
 
-수정 파일: package.xml
-
-B. Tools 및 통신 인터페이스 수정
-시스템 분석 도구 및 데이터 송수신 관련 헤더 파일을 수정합니다.
-
-Reaction Analyzer
-
-경로: src/universe/autoware.universe/tools/reaction_analyzer/include/
-
-수정 파일:
-
-subscriber.hpp: 데이터 수신 로직 또는 토픽 인터페이스 수정
-
-topic_publisher.hpp: 데이터 송신 로직 또는 메시지 타입 정의 수정
 
 6. 실행 테스트
 빌드가 완료되면 환경 변수를 설정하고 샘플 지도를 사용하여 실행 여부를 확인합니다.
