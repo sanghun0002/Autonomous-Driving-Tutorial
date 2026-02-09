@@ -12,6 +12,11 @@ Autoware는 자율주행을 위한 오픈소스 소프트웨어 스택입니다.
   <p>▲ 각 부분(sensing,perception,localization 등)별 상호작용 일부분  </p>
 </div>
 
+<div align="center">
+  <img src="picture/autoware_draw_io.png" width="1800">
+  <p>▲ autoware의 모든 노드 정리 </p>
+</div>
+
 참조 사이트 :
 
 * https://github.com/autowarefoundation/autoware/tree/release/v1.0
