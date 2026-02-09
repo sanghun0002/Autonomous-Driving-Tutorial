@@ -61,45 +61,42 @@ rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
-빌드 과정에서 호환성이 달라 일부 파일을 수정해야할수도 있음.
-🛠 Autoware 빌드 호환성 대응 수정 가이드
-특정 하드웨어 환경(Jetson Orin 등)에서 빌드 시 발생하는 의존성 및 인터페이스 문제를 해결하기 위해 수정된 파일 리스트입니다.
+2. 🛠 빌드 호환성 대응 소스 코드 수정 사항
+특정 환경에서 빌드 에러가 발생하거나 의존성 충돌이 일어날 경우, 아래의 경로에 있는 파일들을 수정하여 호환성을 확보합니다.
 
-기본 작업 공간: ~/Workspace/Autoware_WS/autoware_local
+A. Planning 모듈 설정 변경
+온디 바이스 AI 시스템 내 Planning 관련 핵심 패키지들의 의존성 및 빌드 설정을 관리합니다.
 
-시스템 환경: NVIDIA Jetson Orin (Ubuntu 22.04 / ROS 2 Humble 기반)
+Behavior Velocity Planner
 
-1. Planning 모듈 설정 변경
-플래닝 핵심 패키지의 빌드 오류를 방지하고 의존성을 맞추기 위해 CMakeLists.txt 및 package.xml을 수정합니다.
-
-📂 Behavior Velocity Planner
 경로: src/universe/autoware.universe/planning/behavior_velocity_planner/autoware_behavior_velocity_planner/
 
-수정 대상: * CMakeLists.txt: 빌드 옵션 및 링크 라이브러리 수정
+수정 파일: CMakeLists.txt, package.xml
 
-package.xml: 누락된 의존성 패키지 추가
+Motion Velocity Planner Node
 
-📂 Motion Velocity Planner Node
 경로: src/universe/autoware.universe/planning/motion_velocity_planner/autoware_motion_velocity_planner_node/
 
-수정 대상: * package.xml: 런타임/빌드 의존성 최적화
+수정 파일: package.xml
 
-📂 Static Centerline Generator
+Static Centerline Generator
+
 경로: src/universe/autoware.universe/planning/autoware_static_centerline_generator/
 
-수정 대상: * package.xml: 패키지 호환성을 위한 메타데이터 수정
+수정 파일: package.xml
 
-2. Tools 및 통신 인터페이스 수정
-시스템 분석 도구와 통신 계층에서 데이터 규격 및 인터페이스 불일치 문제를 해결합니다.
+B. Tools 및 통신 인터페이스 수정
+시스템 분석 도구 및 데이터 송수신 관련 헤더 파일을 수정합니다.
 
-📂 Reaction Analyzer
+Reaction Analyzer
+
 경로: src/universe/autoware.universe/tools/reaction_analyzer/include/
 
-수정 대상:
+수정 파일:
 
-subscriber.hpp: 데이터 수신 로직 및 토픽 구독 인터페이스 수정
+subscriber.hpp: 데이터 수신 로직 또는 토픽 인터페이스 수정
 
-topic_publisher.hpp: 데이터 송신 로직 및 메시지 타입 정의 최적화
+topic_publisher.hpp: 데이터 송신 로직 또는 메시지 타입 정의 수정
 
 6. 실행 테스트
 빌드가 완료되면 환경 변수를 설정하고 샘플 지도를 사용하여 실행 여부를 확인합니다.
