@@ -1,4 +1,4 @@
-## Part 6. Autoware: Planning (판단 및 경로 생성)
+## Part 9. Autoware: Planning (판단 및 경로 생성)
 
 *Perception에서 받은 주변 정보와 Localization의 내 위치 정보를 바탕으로, 목적지까지 어떻게 갈지 결정하고 구체적인 경로(Trajectory)를 그리는 과정입니다.*
 
@@ -50,4 +50,5 @@
     - **Smoothing:** 급격한 핸들링이나 가감속을 방지하기 위한 곡선 평활화 (Jerk 최소화).
 - **Output Topic:** `/planning/scenario_planning/trajectory`
     - *이 토픽이 Control 파트로 넘어가는 최종 명령서입니다.*
+
 
