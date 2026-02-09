@@ -27,7 +27,8 @@ LiDAR 센서는 초당 수만~수십만 개의 점(Point) 데이터를 쏟아냅
   * 카메라 렌즈의 왜곡을 펴고, 3차원 공간상의 위치를 알기 위해 내부(Intrinsic)/외부(Extrinsic) 파라미터를 적용합니다.
 ---
 
-## 6-2. 실습: 데이터 흐름 확인 (autoware 만으로는 해당 사항이 불가능함 / 관리자에게 따로 요청하여 시뮬레이터 연동 혹은 rosbag데이터를 받아서 직접 세팅해야함.)
+## 6-2. 실습: 데이터 흐름 확인 
+## (autoware 만으로는 해당 사항이 불가능함 / 관리자에게 따로 요청하여 시뮬레이터 연동 혹은 rosbag데이터를 받아서 직접 세팅해야함.)
 
 가상의 데이터(rosbag)를 재생하거나 시뮬레이터를 켜고, 전처리 전/후의 데이터 양을 비교해봅니다.
 
@@ -67,5 +68,6 @@ ros2 run rviz2 rviz2
 1. **Global Options** -> Fixed Frame을 `map` 또는 `base_link`로 설정.
 2. **Add** -> `PointCloud2` 추가 -> Topic을 `/lidar/concatenated/pointcloud`로 선택.
 3. 차량 주변의 점구름이 선명하게 보이는지 확인합니다.
+
 
 
