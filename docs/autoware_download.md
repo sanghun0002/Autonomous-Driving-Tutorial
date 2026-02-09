@@ -28,7 +28,7 @@ Autoware의 인지 알고리즘은 GPU를 활용하므로 NVIDIA 드라이버와
 공식 Autoware Foundation의 저장소를 로컬 환경에 가져옵니다.
 
 ```Bash
-git clone https://github.com/autowarefoundation/autoware.git -b release/v1.0
+git clone -b release/v1.0 https://github.com/autowarefoundation/autoware.git
 cd autoware
 ```
 4. 의존성 설치 (Ansible 사용)
@@ -60,6 +60,45 @@ rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 ```Bash
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
+
+빌드 과정에서 호환성이 달라 일부 파일을 수정해야할수도 있음.
+🛠 Autoware 소스 코드 수정 사항 정리
+작업 공간: ~/Workspace/Autoware_WS/autoware_local (일부 경로 ~/home/orin/ 포함)
+
+1. Planning 모듈 설정 변경
+Planning 관련 핵심 패키지들의 의존성 및 빌드 설정을 관리합니다.
+
+Behavior Velocity Planner
+
+경로: src/universe/autoware.universe/planning/behavior_velocity_planner/autoware_behavior_velocity_planner/
+
+수정 파일: CMakeLists.txt, package.xml
+
+Motion Velocity Planner Node
+
+경로: src/universe/autoware.universe/planning/motion_velocity_planner/autoware_motion_velocity_planner_node/
+
+수정 파일: package.xml
+
+Static Centerline Generator
+
+경로: src/universe/autoware.universe/planning/autoware_static_centerline_generator/
+
+수정 파일: package.xml
+
+2. Tools 및 통신 인터페이스 수정
+시스템 분석 도구 및 데이터 송수신 관련 헤더 파일을 수정합니다.
+
+Reaction Analyzer
+
+경로: src/universe/autoware.universe/tools/reaction_analyzer/include/
+
+수정 파일:
+
+subscriber.hpp: 데이터 수신 로직 또는 토픽 인터페이스 수정
+
+topic_publisher.hpp: 데이터 송신 로직 또는 메시지 타입 정의 수정
+
 6. 실행 테스트
 빌드가 완료되면 환경 변수를 설정하고 샘플 지도를 사용하여 실행 여부를 확인합니다.
 
