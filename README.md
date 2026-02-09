@@ -67,7 +67,7 @@
 * 시뮬레이터 내에서 차량의 자율주행 동작을 확인하고 이해하는것을 목표로 함.
 * 자율 주행중에 데이터가 수집되는 과정을 실시간으로 확인하고 phase 2에서 학습한 내용을 시뮬레이터 환경에서 복습하는 과정임.
 
-### [📂 Part 12. Carla simulator 설치](./docs/part12_install_carla.md)
+### [📂 Part 12. Carla simulator 설치](https://github.com/sanghun0002/Carla/tree/main)
 * Carla 시뮬레이터 설치 과정 익히기.
 
 ### [📂 Part 13. Carla pythonAPI 사용](./docs/part13_carla_pythonAPI.md)
