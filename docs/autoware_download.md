@@ -20,9 +20,10 @@ Storage: 50GB 이상의 여유 공간
 ```Bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git python3-pip -y
+```
 NVIDIA 드라이버 및 CUDA 설치
 Autoware의 인지 알고리즘은 GPU를 활용하므로 NVIDIA 드라이버와 CUDA Toolkit이 필요합니다.
-```
+
 3. Autoware 저장소 복제
 공식 Autoware Foundation의 저장소를 로컬 환경에 가져옵니다.
 
