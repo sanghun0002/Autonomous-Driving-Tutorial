@@ -1,5 +1,11 @@
 Autoware 설치 가이드
+
 Autoware는 자율주행을 위한 오픈소스 소프트웨어 스택입니다. 이 가이드는 Ubuntu 22.04와 ROS 2 Humble 환경을 기준으로 작성되었습니다.
+
+참조 사이트 :
+
+* https://github.com/autowarefoundation/autoware/tree/release/v1.0
+* https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/#prerequisites
 
 1. 필수 요구 사양
 설치를 시작하기 전에 시스템이 다음 요구 사항을 충족하는지 확인하세요.
