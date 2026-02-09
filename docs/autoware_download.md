@@ -66,13 +66,11 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 * EX) A. Planning 모듈 설정 변경
 
-* * 온디 바이스 AI 시스템 내 Planning 관련 핵심 패키지들의 의존성 및 빌드 설정을 관리합니다.
+    * node: Behavior Velocity Planner
 
-Behavior Velocity Planner
+    * 경로: src/universe/autoware.universe/planning/behavior_velocity_planner/autoware_behavior_velocity_planner/
 
-경로: src/universe/autoware.universe/planning/behavior_velocity_planner/autoware_behavior_velocity_planner/
-
-수정 파일: CMakeLists.txt, package.xml
+    * 수정 파일: CMakeLists.txt, package.xml
 
 Motion Velocity Planner Node
 
