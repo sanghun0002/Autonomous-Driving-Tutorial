@@ -2,11 +2,15 @@
 
 # Part 6. Autoware: Sensing (전처리 과정)
 
-자율주행의 시작은 센서 데이터를 받아오는 것입니다. LiDAR와 Camera로부터 들어오는 Raw Data가 어떻게 병합되고, 연산 효율을 위해 어떻게 압축(Downsampling)되는지 실습합니다.
+자율주행의 시작은 센서 데이터를 받아오는 것입니다. 
+
+LiDAR와 Camera로부터 들어오는 Raw Data가 어떤 형태인지, 어떻게 병합되고, 연산 효율을 위해 어떻게 압축(Downsampling)되는지 확인.
 
 ---
 
 ## 6-1. 핵심 개념 이해
+
+아래 내용과 같이 각 센서별로 데이터가 어떤 형식으로 들어오는지 그리고 어떻게 전처리가 이루어지는 지에 대해 정리
 
 ### 1. LiDAR Sensing Pipeline
 LiDAR 센서는 초당 수만~수십만 개의 점(Point) 데이터를 쏟아냅니다. 이를 그대로 쓰면 컴퓨터가 과부하 되므로 전처리가 필수입니다.
@@ -14,17 +18,16 @@ LiDAR 센서는 초당 수만~수십만 개의 점(Point) 데이터를 쏟아냅
 * **Raw Data Input (`driver`)**
   * 하드웨어(UDP 패킷) 신호를 ROS 메시지(`PointCloud2`)로 변환합니다.
 * **Crop Box Filter**
-  * 차량 본체(`Ego Vehicle`)에 부딪혀서 반사된 불필요한 점들을 제거합니다. (내 차 엉덩이나 지붕이 장애물로 인식되면 안 되니까요!)
+  * 차량 본체(`Ego Vehicle`)에 부딪혀서 반사된 불필요한 점들을 제거합니다.
 * **Voxel Grid Filter**
   * 빽빽한 점구름을 격자(Voxel) 단위로 나누고, 격자 하나당 점 하나만 남겨 데이터 양을 줄입니다. (예: 0.1m 간격)
 
 ### 2. Camera Pipeline
 * **Calibration**
   * 카메라 렌즈의 왜곡을 펴고, 3차원 공간상의 위치를 알기 위해 내부(Intrinsic)/외부(Extrinsic) 파라미터를 적용합니다.
-
 ---
 
-## 6-2. 실습: 데이터 흐름 확인
+## 6-2. 실습: 데이터 흐름 확인 (autoware 만으로는 해당 사항이 불가능함 / 관리자에게 따로 요청하여 시뮬레이터 연동 혹은 rosbag데이터를 받아서 직접 세팅해야함.)
 
 가상의 데이터(rosbag)를 재생하거나 시뮬레이터를 켜고, 전처리 전/후의 데이터 양을 비교해봅니다.
 
@@ -54,7 +57,6 @@ ros2 topic bw /lidar/points_raw
 ros2 topic bw /lidar/concatenated/pointcloud
 ```
 
-
 ### Step 3. RViz2 시각화
 **[터미널 4] Rviz2 실행**
 ```bash
@@ -65,4 +67,5 @@ ros2 run rviz2 rviz2
 1. **Global Options** -> Fixed Frame을 `map` 또는 `base_link`로 설정.
 2. **Add** -> `PointCloud2` 추가 -> Topic을 `/lidar/concatenated/pointcloud`로 선택.
 3. 차량 주변의 점구름이 선명하게 보이는지 확인합니다.
+
 
