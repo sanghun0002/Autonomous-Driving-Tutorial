@@ -28,7 +28,7 @@ Autoware의 인지 알고리즘은 GPU를 활용하므로 NVIDIA 드라이버와
 공식 Autoware Foundation의 저장소를 로컬 환경에 가져옵니다.
 
 ```Bash
-git clone https://github.com/autowarefoundation/autoware.git
+git clone https://github.com/autowarefoundation/autoware.git -b release/v1.0
 cd autoware
 ```
 4. 의존성 설치 (Ansible 사용)
