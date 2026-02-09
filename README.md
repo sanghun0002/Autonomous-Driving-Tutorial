@@ -70,7 +70,7 @@
 ### [📂 Part 12. Carla simulator 설치](https://github.com/sanghun0002/Carla/tree/main)
 * Carla 시뮬레이터 설치 과정 익히기.
 
-### [📂 Part 13. Carla pythonAPI 사용](./docs/part13_carla_pythonAPI.md)
+### [📂 Part 13. Carla pythonAPI 사용](https://github.com/sanghun0002/Carla/blob/main/docs/PythonAPI.md)
 * PythonAPI 설정 및 예제 코드 사용법 익히기.
 
 ### [📂 Part 14. Carla_ros_bridge 연동 ](./docs/part14_carla_ros_bridge.md)
