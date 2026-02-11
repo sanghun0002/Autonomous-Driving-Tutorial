@@ -91,7 +91,7 @@ cd ~/Workspace/Carla/
 ```
 | Carla simulator | 
 | :---: |
-| ![설명1](./docs/picture/carla.png) |
+| ![설명1](./picture/carla.png) |
 
 ### knu 맵 파일 저장하는 방법
 ```
